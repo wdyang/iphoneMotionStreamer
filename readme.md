@@ -19,8 +19,9 @@ npm install ws
 node server.js
 
 
-change index.html:
-g.msg.address = "ws://192.168.1.156:8080/"; to the true web address
+<del>change index.html:
+g.msg.address = "ws://192.168.1.156:8080/"; to the true web address</del>
+JS use window.location.origin to identify source IP.
 
 from iphone, access the website, data should stream
 
