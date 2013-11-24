@@ -9,6 +9,7 @@ console.log('connect to ' + g.msg.address);
 // g.msg.address = "ws://10.0.1.4:8080/";  //at kunst-stoff
 // g.msg.address = "ws://192.168.2.19:8080/";
 //g.msg.address = "ws://192.168.1.7:81/";
+// g.msg.address = "ws://10.246.29.121:8080/";
 g.msg.is_on_air = false;
 g.msg.ws = null;
 g.msg.dp = null;
@@ -144,6 +145,9 @@ g.events.devicemotion = function(event){
 	var ax = ((ori ==  0)? ACC.x: (ori == 90)? -ACC.y: (ori == -90)? ACC.y: -ACC.x);
 	var ay = ((ori ==  0)? ACC.y: (ori == 90)? ACC.x: (ori == -90)? -ACC.x: -ACC.y);
 
+	ax=-ax;
+	ay=-ay;
+
 	if (init){
 		gax=ax;
 		gay=ay;
@@ -188,7 +192,8 @@ g.events.devicemotion_set = function(x, y, z){
 		overflow.ox = overflow_x;
 		overflow.oy = overflow_y;
 		var rx = 0, ry = 0, rz = 0;
-		ry = (-90 - Math.asin( clip(y/9.81, -1, 1) )*180/Math.PI) * (overflow_y? -1: 1);
+		//Add 45 degree rotation forward to make it look pespective correct
+		ry = (-90 - Math.asin( clip(y/9.81, -1, 1) )*180/Math.PI) * (overflow_y? -1: 1)+45;
 		rx = (Math.asin( clip(-x/9.81, -1, 1) )*180/Math.PI);
 		rx = (overflow_x? 180 - rx: rx);
 		// correct angles
@@ -242,11 +247,11 @@ function load(event){
     document.addEventListener("touchcancel", touchHandler, true); 
 
 	el_cube = document.getElementById('cube');
-	var el_g_copyright = document.getElementById("g_copyright");
+	// var el_g_copyright = document.getElementById("g_copyright");
 	st_ua_patch_interface(g.events);
-	if(isiPhone) el_g_copyright.style.top = "400px";
-	el_g_copyright[hasTouch? "ontouchstart": "ondblclick"] = g.events.copyright_dblclick;
-	if(isARM) el_g_copyright.style.display = "none";
+	// if(isiPhone) el_g_copyright.style.top = "400px";
+	// el_g_copyright[hasTouch? "ontouchstart": "ondblclick"] = g.events.copyright_dblclick;
+	// if(isARM) el_g_copyright.style.display = "none";
 	with(g.events){
 		window.onkeydown = keydown;
 		window.onmousemove = mousemove;

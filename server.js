@@ -8,7 +8,7 @@ var wslist=[];
 var motion_data = [];
 var t0 = Date.now();
 var log_idx = 0;
-var Logging = false;
+var Logging = true;
 
 if(Logging) console.log('server started');
 
