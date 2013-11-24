@@ -16,6 +16,8 @@ http://www.mobilexweb.com/blog/safari-ios-accelerometer-websockets-html5
 Install: on mac, put under [your user name]/site
 
 npm install ws
+Run:
+http://ip/~yourname/iphoneMotionStreamer on browser and phone
 node server.js
 
 
