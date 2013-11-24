@@ -13,4 +13,4 @@
 		/*Top*/
 		.st_side5	{ -webkit-transform:rotateX(+90deg) translateZ(100px) scale(1, 1.5);	box-shadow:inset 0px 0px 8px 3px rgba(255,255,255, 0.9), 0px 0px 5px 3px rgba(255,255,255, 0.9);	background-color:rgba(72,61,139, 0.35); color:Violet; font-weight:bold; }
 		/*Bottom*/
-		.st_side6	{ -webkit-transform:rotateX(-90deg) rotate(180deg) translateZ(100px) scale(1, 1.5); box-shadow:inset 0px 0px 8px 3px rgba(192,0,0, 1), 0px 0px 5px 3px rgba(192,0,0, 1);	background-color:rgba(139,0,0, 0.7); }
+		.st_side6	{ -webkit-transform:rotateX(-90deg) rotate(180deg) translateZ(100px) scale(1, 1.5); box-shadow:inset 0px 0px 8px 3px rgba(92,100,100, 1), 0px 0px 5px 3px rgba(92,100,100, 1);	background-color:rgba(39,100,100, 0.7); }
